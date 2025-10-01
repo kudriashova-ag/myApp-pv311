@@ -13,8 +13,9 @@ const Form = ({addTask}) => {
       setTextError(true);
       return;
     }
-    addTask(text)
-    setText('')
+    addTask(text);
+    setText('');
+    setTextError(false);
   }
 
   return (
