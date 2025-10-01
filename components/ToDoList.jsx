@@ -1,9 +1,10 @@
 // rnfc
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import Header from "./Header";
 import Form from "./Form";
 import ListItem from "./ListItem";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const list = [
   {
@@ -25,6 +26,34 @@ const list = [
 
 const ToDoList = () => {
   const [tasks, setTasks] = useState(list);
+
+  useEffect(() => { 
+    const loadData = async () => { 
+      try { 
+        const savedTasks = await AsyncStorage.getItem("tasks")
+        if (savedTasks !== null) { 
+          setTasks(JSON.parse(savedTasks))
+        }
+      }
+      catch (e) { 
+        console.log("Помилка при завантаженні: ", e);
+        
+      }
+    }
+    loadData();
+  }, [])
+
+  useEffect(() => { 
+    const saveData = async () => { 
+      try {
+        await AsyncStorage.setItem('tasks', JSON.stringify(tasks))
+      }
+      catch (e) { 
+        console.log('Помилка при збереженні: ', e);
+      }
+    }
+    saveData()
+  }, [tasks])
 
   const addTask = (title) => {
     setTasks([...tasks, { title, id: Date.now() }]);

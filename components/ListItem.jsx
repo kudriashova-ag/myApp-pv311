@@ -8,6 +8,7 @@ import {
   Text,
   View,
 } from "react-native";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const ListItem = ({ item, toggleDone }) => {
   return (
@@ -21,7 +22,11 @@ const ListItem = ({ item, toggleDone }) => {
           styles.button,
           pressed ? styles.buttonPressed : styles.buttonNormal,
         ]}
-      ><Text>Видалити</Text>
+        onPress={() => {}}
+      >
+        {({ pressed }) => (
+            <FontAwesome name="trash" size={24} color={ pressed ? "white" : "black" } />
+        )}
       </Pressable>
     </View>
   );
@@ -29,9 +34,12 @@ const ListItem = ({ item, toggleDone }) => {
 const styles = StyleSheet.create({
   button: {
     padding: 10,
+    width: 48,
+    height: 48,
     borderRadius: 15,
     borderWidth: 2,
     borderColor: "tomato",
+    alignItems: 'center'
   },
   buttonNormal: {
     backgroundColor: "#eee",
