@@ -31,6 +31,8 @@ const ToDoList = () => {
     const loadData = async () => { 
       try { 
         const savedTasks = await AsyncStorage.getItem("tasks")
+        
+
         if (savedTasks !== null) { 
           setTasks(JSON.parse(savedTasks))
         }
