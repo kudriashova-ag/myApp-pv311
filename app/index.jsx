@@ -16,6 +16,9 @@ const Index = () => {
       <Link href="/ToDoList" style={globalStyles.link}>
         ToDo
       </Link>
+      <Link href="/login" style={globalStyles.link}>
+        Login
+      </Link>
     </View>
   );
 };
