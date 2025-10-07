@@ -2,25 +2,24 @@ import { Link } from "expo-router";
 import React from "react";
 import { Text } from "react-native";
 import { StyleSheet, View } from "react-native";
+import globalStyles from "../constants/global";
+import Spacer from "../components/Spacer";
 
 const Index = () => {
   return (
-    <View style={styles.container}>
-          <Text style={styles.title}>Home</Text>
-          <Link href="/about">About Page</Link>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.title}>Home</Text>
+      <Spacer />
+      <Link href="/about" style={globalStyles.link}>
+        About Page
+      </Link>
+      <Link href="/ToDoList" style={globalStyles.link}>
+        ToDo
+      </Link>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 30,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default Index;

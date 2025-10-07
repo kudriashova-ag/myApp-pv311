@@ -1,9 +1,9 @@
 // rnfc
 import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Text, FlatList } from "react-native";
-import Header from "./Header";
-import Form from "./Form";
-import ListItem from "./ListItem";
+import Header from "../components/Header";
+import Form from "../components/Form";
+import ListItem from "../components/ListItem";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const list = [

@@ -1,25 +1,20 @@
-import { Link } from 'expo-router';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Link } from "expo-router";
+import { StyleSheet, Text, View } from "react-native";
+import globalStyles from "../constants/global";
+import Spacer from "../components/Spacer";
 
 const About = () => {
-    return (
-        <View style={styles.container}>
-            <Text style={styles.title}>About</Text>
-            <Link href="/">Home Page</Link>
-        </View>
-    );
-}
+  return (
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.title}>About</Text>
+      <Spacer />
+      <Link href="/" style={globalStyles.link}>
+        Home Page
+      </Link>
+    </View>
+  );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 30,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default About;
