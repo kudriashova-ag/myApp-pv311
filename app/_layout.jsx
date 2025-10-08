@@ -29,6 +29,7 @@ const RootLayout = () => {
         />
         <Stack.Screen name="ToDoList" options={{ title: "ToDo List" }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
       <Text>Footer</Text>
     </View>

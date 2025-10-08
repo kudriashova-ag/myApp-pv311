@@ -19,6 +19,9 @@ const Index = () => {
       <Link href="/login" style={globalStyles.link}>
         Login
       </Link>
+      <Link href="/home" style={globalStyles.link}>
+        Home tabs
+      </Link>
     </View>
   );
 };
